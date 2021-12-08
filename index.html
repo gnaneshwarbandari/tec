@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -9,6 +9,33 @@
 	<link rel="icon" href="favicon (1).ico">
 
 	<title>The Electronix Club</title>
+	<style type="text/css">
+		#modalOverlay {
+			position: fixed;
+			top: 20%;
+			left: 0;
+			background: rgba(0, 0, 0, 0.5);
+			z-index: 99999;
+			height: 100%;
+			width: 100%;
+	}
+	.modalPopup {
+				position: absolute;
+				top: 30%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				width: 50%;
+				-webkit-box-shadow: 0 2px 10px 3px rgba(0,0,0,.2);
+				-moz-box-shadow: 0 2px 10px 3px rgba(0,0,0,.2);
+				box-shadow: 0 2px 10px 3px rgba(0,0,0,.2);
+		}
+	.modalContent {padding: 0 2em;}
+	.button1{
+		margin : 5px;
+		background-color: black;
+    	color: antiquewhite;
+	}
+	</style>
 
 	<!-- CSS -->
 	<!-- Bootstrap core CSS -->
@@ -39,17 +66,34 @@
 
 
 	<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+		window.onload = function() {
+  		document.getElementById('button').onclick = function() {
+    	document.getElementById('modalOverlay').style.display = 'none'
+	  };
+	};
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},
+	  i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })
+	  (window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-79985532-1', 'auto');
-  ga('send', 'pageview');
+	  ga('create', 'UA-79985532-1', 'auto');
+	  ga('send', 'pageview');
 
-</script>
+	</script>
 </head>
-<body>
+<body> 
+
+	<div id="modalOverlay">
+		<div class="modalPopup">
+			<img src="assets/images/events/talks-2021.png" alt="Loading.." />
+			<div style="text-align-last: center; background-color: transparent; font-size: 14px;">
+				<button class="button1"><a href="https://bit.ly/3pEmmJr" target="_blank">Register</a></button>
+				<button class="buttonStyle button1" id="button">Close</button>
+			</div>	
+		</div>
+	</div>
 
 
 
@@ -101,9 +145,6 @@
 		</nav>
 
 		
-
-		<!-- Navigation end -->
-        <marquee class="updates" behavior="scroll" direction="left"><i><em>National Level quiz. For more details <a href="Quiz.html" target="_blank">click here</a></em></i></marquee>
 
 		<!-- Intro section start -->
 
